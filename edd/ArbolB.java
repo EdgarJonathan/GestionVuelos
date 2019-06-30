@@ -1,5 +1,7 @@
 package edd;
 
+import Info.Destino;
+
 public class ArbolB {
 
 
@@ -7,7 +9,7 @@ public class ArbolB {
 
 
 
-	public void insertar(int valor) {
+	public void insertar(Destino valor) {
 
 		NodoB nodo = new NodoB(valor);
 		if (estaVacio()) {
@@ -59,7 +61,7 @@ public class ArbolB {
 					return rama;
 					
 					
-				} else if (nodo.getDato() < temp.getDato()) {
+				} else if (nodo.getDato().getCod() < temp.getDato().getCod()) {
 					
 					Object obj = inserta(nodo, temp.getIzq());
 					
@@ -169,7 +171,7 @@ public class ArbolB {
 				
 				imprimir(actual.getIzq());
 				
-				System.out.println("Nodo-> "+actual.getDato());
+				System.out.println("Nodo-> "+actual.getDato().getNombres());
 				
 				imprimir(actual.getDer());
 				

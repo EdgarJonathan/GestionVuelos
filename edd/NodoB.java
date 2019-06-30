@@ -1,5 +1,7 @@
 package edd;
 
+import Info.Destino;
+
 public class NodoB {
 	
 
@@ -10,10 +12,10 @@ public class NodoB {
 	
 	//contenido del arbol b
 	//alias dato
-	private int Dato;
+	private Destino Dato;
 
 	
-	NodoB(int Dato){
+	NodoB(Destino Dato){
 		
 		this.Dato = Dato;
 		sig=ant=null;
@@ -21,7 +23,7 @@ public class NodoB {
 		
 	}
 	
-	NodoB(int Dato , Rama izq, Rama der){
+	NodoB(Destino Dato , Rama izq, Rama der){
 		
 		this.Dato = Dato;
 		this.izq =izq;
@@ -31,7 +33,7 @@ public class NodoB {
 	
 	NodoB(){
 		
-		this.Dato = 0;
+		this.Dato = null;
 		sig=ant=null;
 		izq=der=null;
 	}
@@ -79,12 +81,12 @@ public class NodoB {
 	}
 
 
-	public int getDato() {
+	public Destino getDato() {
 		return Dato;
 	}
 
 
-	public void setDato(int valor) {
+	public void setDato(Destino valor) {
 		Dato = valor;
 	}
 

@@ -48,7 +48,7 @@ public class Rama {
 
 			if(aux.getDato() == nuevo.getDato()) {
 				break;
-			}else if(nuevo.getDato() < aux.getDato()) {
+			}else if(nuevo.getDato().getCod() < aux.getDato().getCod()) {
 				
 
 				if(aux == primero) {

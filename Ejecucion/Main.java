@@ -14,7 +14,7 @@ public class Main {
 		
 		for (int i = 0; i < 60	; i++) {
 			
-			tree.insertar(i);
+			tree.insertar(new Destino(i,"Nombre"+i));
 			
 		}
 		
