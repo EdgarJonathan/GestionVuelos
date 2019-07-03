@@ -4,13 +4,13 @@ public class Destino {
 	
 	
 	private int cod;
-	private String nombres;
+	private String nombre;
 	
 	
 	public Destino(int cod, String nombre)
 	{
 		this.cod =cod;
-		this.nombres = nombre;
+		this.nombre = nombre;
 	}
 
 	
@@ -27,13 +27,13 @@ public class Destino {
 	}
 
 
-	public String getNombres() {
-		return nombres;
+	public String getNombre() {
+		return nombre;
 	}
 
 
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 

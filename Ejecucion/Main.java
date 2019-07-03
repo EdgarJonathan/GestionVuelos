@@ -1,7 +1,8 @@
 package Ejecucion;
 
-import edd.*;
-import Info.*;
+import Info.Destino;
+import grafo.*;
+import grafo.btree.ArbolB;
 
 public class Main {
 

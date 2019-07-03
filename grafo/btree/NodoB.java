@@ -1,4 +1,4 @@
-package edd;
+package grafo.btree;
 
 import Info.Destino;
 
@@ -6,12 +6,8 @@ public class NodoB {
 	
 
 	private NodoB  sig , ant;
-
 	private Rama izq , der;
-	
-	
-	//contenido del arbol b
-	//alias dato
+
 	private Destino Dato;
 
 	

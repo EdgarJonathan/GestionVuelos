@@ -1,4 +1,4 @@
-package edd;
+package grafo.btree;
 
 import Info.Destino;
 
@@ -109,7 +109,6 @@ public class ArbolB {
 	private Object dividir(Rama c) {
 		
 		NodoB result = null;
-		
 		Rama izq =  new Rama();
 		Rama der =  new Rama();
 			
@@ -118,38 +117,21 @@ public class ArbolB {
 		NodoB actual = c.getPrimero();
 		
 		while(actual!= null) {
-			
 			if(cont <2) {
-				
 				NodoB aux = new NodoB(actual.getDato(),actual.getIzq(),actual.getDer());
-				
 				izq.insertar(aux);
-				
 			}else if(cont>2) {
-				
-				
 				NodoB aux = new NodoB(actual.getDato(),actual.getIzq(),actual.getDer());
-				
 				der.insertar(aux);
-				
 			}else {
-				
 				NodoB aux = new NodoB(actual.getDato(),actual.getIzq(),actual.getDer());
-				
 				result = aux;
-				
 			}
-			
-			
 			actual = actual.getSig();
 			cont++;
 		}
-		
-		
 		result.setIzq(izq);
 		result.setDer(der);
-		
-		
 		return result;
 	}
 
@@ -171,7 +153,7 @@ public class ArbolB {
 				
 				imprimir(actual.getIzq());
 				
-				System.out.println("Nodo-> "+actual.getDato().getNombres());
+				System.out.println("Nodo-> "+actual.getDato().getNombre());
 				
 				imprimir(actual.getDer());
 				
@@ -196,6 +178,12 @@ public class ArbolB {
 	}
 
 
+	
+	public void graficar(){
+		
+	}
+	
+	
 
 
 
