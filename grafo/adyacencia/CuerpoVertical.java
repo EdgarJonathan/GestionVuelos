@@ -2,21 +2,15 @@ package grafo.adyacencia;
 
 import Info.Ruta;
 
-public class CuerpoHorizontal {
-
-
+public class CuerpoVertical {
 
 	NodoM first;
 	NodoM last;
 
+	public CuerpoVertical(){
 
-
-
-
-	public CuerpoHorizontal() {
 		first=last=null;
 	}
-
 
 
 	public void add(NodoM nuevo) {
@@ -55,7 +49,7 @@ public class CuerpoHorizontal {
 
 			}
 
-			actual = actual.getSig();
+			actual = actual.getAbajo();
 		}
 
 		return false;
@@ -67,39 +61,43 @@ public class CuerpoHorizontal {
 	{
 
 		//si el nuevo es menor a primero
-		if(nuevo.getData().getDestinoC() < first.getData().getDestinoC()) {
-			nuevo.setSig(first);
-			first.setAnt(nuevo);
-			first = nuevo;
+		if(nuevo.getData().getOrigenF() < first.getData().getOrigenF()) {
+		
+			nuevo.setAbajo(first);
+			first.setArriba(nuevo);
+			first =nuevo;
+			
+
 		}
 		//si el nuevo es mayor a ultimo
-		else if(nuevo.getData().getDestinoC() >last.getData().getDestinoC()) {
+		else if(nuevo.getData().getOrigenF() >last.getData().getOrigenF()) {
 
-			nuevo.setAnt(last);
-			nuevo.setSig(nuevo);
+			nuevo.setArriba(last);
+			last.setAbajo(nuevo);
 			last=nuevo;
-			
+
+
 		}else {
-			
+
 			NodoM actual = first;
-			
+
 			while(actual!=last) {
-				
-				
-				if((nuevo.getData().getDestinoC() > actual.getData().getDestinoC())&&
-				   (nuevo.getData().getDestinoC() < actual.getSig().getData().getDestinoC())) {
+
+
+				if((nuevo.getData().getOrigenF() > actual.getData().getOrigenF())&&
+						(nuevo.getData().getDestinoC() < actual.getAbajo().getData().getOrigenF())) {
 					
-					
-					nuevo.setAnt(actual);
-					nuevo.setSig(actual.getSig());
-					actual.getSig().setAnt(nuevo);
-					actual.setSig(nuevo);
+					nuevo.setArriba(actual);
+					nuevo.setAbajo(actual.getAbajo());
+					actual.getAbajo().setArriba(nuevo);
+					actual.setAbajo(nuevo);
+
 					break;
 				}
-				
-				
-				
-				actual = actual.getSig();
+
+
+
+				actual = actual.getAbajo();
 			}
 
 
@@ -107,16 +105,10 @@ public class CuerpoHorizontal {
 
 
 	}
+	
+	
 
 }
-
-
-
-
-
-
-
-
 
 
 

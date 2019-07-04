@@ -9,6 +9,15 @@ public class Rama {
 
 
 
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+
+
+
 	//constructor
 	public Rama(){
 
@@ -44,6 +53,7 @@ public class Rama {
 
 		NodoB aux=primero;
 
+		
 		while(aux!=null) {
 
 			if(aux.getDato() == nuevo.getDato()) {
@@ -99,20 +109,6 @@ public class Rama {
 
 	}
 
-
-	public void delete() {
-
-
-		while(primero!=null) {
-
-			NodoB aux =primero;
-			primero = primero.getSig();
-			
-			aux =null;
-
-		}
-
-	}
 
 
 
